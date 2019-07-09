@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: none
 ---
 [
   {% for post in site.posts %}
@@ -9,7 +9,7 @@ layout: null
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ post.url }}",
       "date"     : "{{ post.date }}",
-      "content": "{{ page.content | strip_html | strip_newlines | remove_chars | escape }}"
+      "content": {{ post.content | jsonify }}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
   ,
@@ -21,7 +21,7 @@ layout: null
         "tags"     : "{{ page.tags | join: ', ' }}",
         "url"      : "{{ page.url }}",
         "date"     : "{{ page.date }}",
-	"content": "{{ page.content | strip_html | strip_newlines | remove_chars | escape }}"
+	"content": {{ page.content | jsonify }}
      {% endif %}
    } {% unless forloop.last %},{% endunless %}
   {% endfor %}
