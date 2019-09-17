@@ -33,4 +33,7 @@ http://mips.as.arizona.edu/~cnaw/sun.html
 
 1.092×10^-12 ergs per square centimeter second
 
-$$$5+5$$
+
+$$\begin{equation}5+5 = 5 \pm 4 \end{equation}$$
+$$ 5+5 = 5 \pm 4 $$
+\$$ 5 + 5 $$
