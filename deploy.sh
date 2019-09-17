@@ -1,4 +1,4 @@
-cd demo/
+#cd demo/
 bundle exec jekyll build
 git checkout master
 git add -A

@@ -2,6 +2,7 @@
 layout: log
 ---
 
+
 # 2019.09.13
 
 
@@ -31,9 +32,12 @@ http://mips.as.arizona.edu/~cnaw/sun.html
 
 2.75 the luminosity of the Sun us 1.058x10^27 Watts at a distance of 9 kpc this iss:
 
-1.092×10^-12 ergs per square centimeter second
+$$1.092×10^{-12}$$ ergs per square centimeter second
 
 
-$$\begin{equation}5+5 = 5 \pm 4 \end{equation}$$
-$$ 5+5 = 5 \pm 4 $$
-\$$ 5 + 5 $$
+# 2019.09.17
+
+Two Obs and request a wavier of 1 hour and 15 minutes and get all the frames qe think we can get. 
+
+$$5+5 \sim 5$$
+

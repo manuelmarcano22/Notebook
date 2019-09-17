@@ -1,65 +1,59 @@
-# 📓 jekyll-lab-notebook
+# eln-example
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-lab-notebook.svg)](https://badge.fury.io/rb/jekyll-lab-notebook)
-[![Build Status](https://travis-ci.org/tlnagy/jekyll-lab-notebook.svg?branch=master)](https://travis-ci.org/tlnagy/jekyll-lab-notebook)
+An example eln created using the [jekyll-lab-notebook](https://github.com/tlnagy/jekyll-lab-notebook) infrastructure
 
-Supercharge your electronic lab notebook!
+## Layout
 
-This is a full-featured jekyll theme that lets you quickly write markdown
-notebook entries and will create a great HTML website that you can run locally
-to view all your hard work. It's hackable to its core so you can tweak it to
-your heart's desire. Add pages, change layouts, add cool jekyll plugins,
-whatever; think of this as your springboard.
+### Log entries
 
-[LIVE DEMO HERE](http://tamasnagy.com/jekyll-lab-notebook/)
+The default setup is to have a separate notebook entries every month with a separate folder for each month. These folders live inside the `_posts/` folder. Each month folder has a single markdown file with the following name: `YYYY-MM-DD-title.md` where title can be anything you want. You can put any images and assets in the month folder or in sub-folders and these will be associated with your month post.
 
-![](screenshot.png)
-
-![](screenshot2.png)
-
-## Features
-
-- Take simple markdown notes in your favorite text editor (I recommend [Atom](https://atom.io/))
-- Easily embed images, CSVs, or PDFs in your protocols/logs/wherever
-- Interactive calendar to show you when you had log entries
-- Enter your log entries chronologically, but then tag them so they show up with other entries on the same project (Multi-project tags supported too!)
-- Add highlighted sections (note or thought bubbles) to draw attention to important things
-
-## Installation and Usage
-
-The `demo/` folder contains a fully functioning example ELN. Clone this repo and navigate into the `demo/` folder. Make sure you have a recent version of ruby installed and then run
+Log entries have to have the following as the first couple lines in the file:
+```
+---
+layout: log
+---
+```
+and then you can follow them with day entries like so
 
 ```
-gem install bundler
+# 2017.07.19
+```
+you can also tag day entries with project tags like so
+
+```
+# 2017.07.19 #project1 #fancy-project2
+```
+and then this post will be grouped with other day entries that also have the same project tags.
+
+## Installation
+
+### Requirements
+
+You'll need a recent version of [Ruby](https://www.ruby-lang.org/en/documentation/installation/#package-management-systems). The best way of installing it is via your favorite package manager (e.g. [brew](https://brew.sh/) for macOS or zypper on openSUSE) or via the [RubyInstaller](https://rubyinstaller.org) on Windows. Then install `bundler` and `jekyll` by running the following command in the terminal:
+
+```
+gem install bundler jekyll
 ```
 
-which will install the `bundle` package manager. Next, run
+### Instructions
+
+Clone this repository (or just download it) by running
+
+```
+git clone https://github.com/tlnagy/eln-example.git
+```
+
+and make sure to have `ruby`, `bundler`, and `jekyll` installed (see above). Navigate to the `eln-example` folder and run
 
 ```
 bundle update
 ```
 
-inside the `demo/` folder, which will install all the necessary packages. Then run
+which will install all the dependencies necessary for this project and then run
 
 ```
 bundle exec jekyll serve -wi
 ```
 
-to actually serve the ELN and navigate to the address listed using your browser to see your ELN. Edit the posts inside the `_posts/` subdirectory to add entries.
-
-## Contributing
-
-This project is split into two main reports
-
-- The one you're on, which is where all the layout and design stuff happens
-- The [plugins](https://github.com/tlnagy/jekyll-lab-notebook-plugins) repo, this where the heavy lifting happens.
-
-Bug reports and pull requests are welcome on GitHub at <https://github.com/tlnagy/jekyll-lab-notebook> and at <https://github.com/tlnagy/jekyll-lab-notebook-plugins>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-TODO
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+to build and serve your website. Point your browser to the address that jekyll specifies to see your eln.
