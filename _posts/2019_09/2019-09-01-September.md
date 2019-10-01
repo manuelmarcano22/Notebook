@@ -30,6 +30,7 @@ Here I checked the absolute magnitude of the Sun in several filters:
 http://mips.as.arizona.edu/~cnaw/sun.html
 
 
+
 2.75 the luminosity of the Sun us 1.058x10^27 Watts at a distance of 9 kpc this iss:
 
 $$1.092×10^{-12}$$ ergs per square centimeter second
