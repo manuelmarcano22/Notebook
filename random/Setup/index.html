@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Log |
+    Computer Setup
+    
+  </title>
+  <meta name="description" content="Online notebook for my research at TTU">
+
+  <link rel="stylesheet" href="/Notebook/assets/main.css">
+  <link rel="canonical" href="/Notebook/random/Setup/">
+  <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" href="/Notebook/">Lab Notebook</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+        
+        
+          <a class="page-link" href="/Notebook/projects">Projects</a>
+        
+        <input type="text" id="search-input" placeholder="search...">
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <ul id="results-container"></ul>
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Computer Setup</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="my-setup">My Setup</h2>
+
+<h3 id="the-university-server">The university Server</h3>
+
+<p>The server at the physics department I have access to is <em>krieger.ttu.edu</em> and my username <em>mmarcano</em>. When connected to the university network can use ssh as:</p>
+
+<p><code class="highlighter-rouge">ssh mmarcano@krieger.ttu.edu</code></p>
+
+<p>For <strong>remote access</strong></p>
+
+<p><code class="highlighter-rouge">ssh -L 2222:krieger.ttu.edu:22 mapichar@ssh.ttu.edu</code></p>
+
+<p>The instruction on how to do that can be found <a href="https://askit.ttu.edu/portal/app/portlets/results/viewsolution.jsp?SToken=BE61C2DC4FE5B4CC9919A11B48D6056B&amp;solutionid=160504120603124&amp;hypermediatext=null">here</a>.</p>
+
+<p>After establishing the connection thought <em>ssh.ttu.edu</em> in my localhost I can scp and ssh as:</p>
+
+<p><code class="highlighter-rouge">scp -P 2222 mmarcano@localhost:~/krieger.* .</code></p>
+
+<p>and</p>
+
+<p><code class="highlighter-rouge">ssh -p 2222 mmarcano@localhost</code></p>
+
+<h3 id="jupyter-notebooks">Jupyter notebooks</h3>
+
+<p><a href="https://anaconda.org/">Anaconda</a> is installed and I can run <a href="http://jupyter.org/">Jupyter</a> notebooks. In the server I first do:</p>
+
+<p><code class="highlighter-rouge">jupyter notebook --no-browser --port=8890</code></p>
+
+<p>And then in my computer</p>
+
+<p><code class="highlighter-rouge">ssh -N -L localhost:8888:localhost:8888 mmarcano@krieger.ttu.edu</code></p>
+
+<p>The idea was taken from this <a href="https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh">website</a>.</p>
+
+<p>To connect from out of campus can do like  above:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-L</span> 2222:krieger.ttu.edu:22 mapichar@ssh.ttu.edu
+</code></pre></div></div>
+<p>In archer/krieger then do:</p>
+
+<p><code class="highlighter-rouge">jupyter notebook --no-browser --port=8890</code></p>
+
+<p>and in my local machine:</p>
+
+<p><code class="highlighter-rouge">ssh -N -L localhost:8890:localhost:8890 -p 2222 mmarcano@localhost</code></p>
+
+<p>Then I can just open in a browser localhost:8890</p>
+
+<p>Regarding Jupyter notebooks it is recommended to started with a password since it is a share server and anybody that has access to the server will have access to your Jupyter notebooks.</p>
+
+<p>Can put a password easily doing:</p>
+
+<p><code class="highlighter-rouge">jupyter notebook password</code></p>
+
+<p>For version control of jupyter notebooks:</p>
+
+<p><a href="https://github.com/jupyter/nbdime">nbdime</a></p>
+
+<h3 id="jupyter-hub-and-kernels">Jupyter Hub and Kernels</h3>
+
+<p>Since version 4.1.0, anaconda includes a special package nb_conda_kernels that detects conda environments with notebook kernels and automatically registers them. This makes using a new python version as easy as creating new conda environments.</p>
+
+<h3 id="wget-with-jupyter">wget with Jupyter</h3>
+
+<p>From this answer in stack overflow <a href="https://stackoverflow.com/questions/24437661/retrieving-files-from-remote-ipython-notebook-server">Retrieving files from remote IPython notebook server?</a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span><span class="p">,</span> <span class="n">FileLinks</span>
+<span class="n">FileLinks</span><span class="p">(</span><span class="s">'.'</span><span class="p">)</span> <span class="c1">#lists all downloadable files on server
+</span></code></pre></div></div>
+<p>The code generates links to download files</p>
+
+<h1 id="vnc">VNC</h1>
+
+<p>I can use a VNC server in krieger just do:</p>
+
+<p><code class="highlighter-rouge">vncserver</code></p>
+
+<p>and then in my computer I installed <a href="http://tigervnc.org/">http://tigervnc.org/</a> and can simple do <code class="highlighter-rouge">vncviewer</code>. This will pop-up a GUI and I I put:</p>
+
+<p><code class="highlighter-rouge">krieger.ttu.edu:6</code></p>
+
+<p>or the number I got when I put the vnc in Krieger and the password I selected.</p>
+
+<p>To kill it do:</p>
+
+<p><code class="highlighter-rouge">vncserver -kill :6</code></p>
+
+<p>or number</p>
+
+<p>To see memory used by process can do:</p>
+
+<h2 id="memory">Memory</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ps aux</td>
+      <td>awk ‘{print $6/1024 “ MB\t\t” $11     “ “ $1  }’</td>
+      <td>sort -n</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Manuel Pichardo M
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/manuelmarcano22"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">manuelmarcano22</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Built on 2020-01-10 18:48:01 CST</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- mathjax -->
+  <!--  <script src="/Notebook/assets/mathjax.js"></script>-->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- change script pointing to jekyll-search.js -->
+  <script src="/Notebook/assets/simple-jekyll-search.min.js"></script>
+
+  <script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/Notebook/search.json',
+	    searchResultTemplate: '<li><a href="/Notebook{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 100,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+</footer>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

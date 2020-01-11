@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Log |
+    Lab Notebook
+  </title>
+  <meta name="description" content="Online notebook for my research at TTU">
+
+  <link rel="stylesheet" href="/Notebook/assets/main.css">
+  <link rel="canonical" href="/Notebook/">
+  <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" href="/Notebook/">Lab Notebook</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+        
+        
+          <a class="page-link" href="/Notebook/projects">Projects</a>
+        
+        <input type="text" id="search-input" placeholder="search...">
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <ul id="results-container"></ul>
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
+<style type="text/css">
+  .content {
+      min-width: 400px;
+  }
+  #calendar {
+      width: 700px;
+  }
+  .subdomain-text {
+      fill: #fff;
+  }
+  #calendar a {
+      color: #999;
+  }
+  @media all and (max-width:1400px) {
+      #calendar {
+          width: 500px;
+      }
+  }
+  @media all and (max-width:730px) {
+      #calendar {
+          width:365px;
+      }
+  }
+  @media all and (max-width:420px) {
+      #calendar {
+          width:191px;
+      }
+  }
+</style>
+
+  
+
+    <script type="text/javascript">
+
+        // stolen from here: https://stackoverflow.com/questions/688196/how-to-use-a-link-to-call-javascript
+        window.onload = function() {
+          // hides the element specified by data-target when a link is clicked
+          f = function() {
+            var button = document.getElementById(this.id);
+            target = document.getElementById(button.dataset.target)
+            if (target.style.display === 'block') {
+                target.style.display = 'none';
+            } else {
+                target.style.display = 'block';
+            }
+            return false;
+          }
+
+          
+            
+              
+              button = document.getElementById("log-link")
+              button.onclick = f;
+              target = document.getElementById(button.dataset.target)
+              
+                target.style.display = 'block'
+              
+            
+              
+              button = document.getElementById("miscellaneous-link")
+              button.onclick = f;
+              target = document.getElementById(button.dataset.target)
+              
+                target.style.display = 'none'
+              
+            
+          
+        }
+    </script>
+</head>
+<p>Online notebook for my research at TTU
+</p>
+<div id="calendar" style="margin:0 auto;">
+	<div id="cal-heatmap"></div>
+	<div style="padding-top: 10px;">
+		<a href="#" style="margin-right:10px;" id="cal-heatmap-PreviousDomain-selector">&larr;</a>
+		<a href="#" style="float:right;" id="cal-heatmap-NextDomain-selector">&rarr;</a>
+	</div>
+</div>
+<div id="home">
+  
+    
+      <h1><a href="#" id="log-link"
+         data-target="log-list">Log</h1>
+      <div id="log-list">
+      <ul class="posts">
+        
+          
+            <li><a href="/Notebook/log/2019_12/">December 2019</a></li>
+          
+            <li><a href="/Notebook/log/2019_10/">October 2019</a></li>
+          
+            <li><a href="/Notebook/log/2019_09/">September 2019</a></li>
+          
+            <li><a href="/Notebook/log/2019_08/">August 2019</a></li>
+          
+            <li><a href="/Notebook/log/2019_07/">July 2019</a></li>
+          
+        
+      </ul>
+      </div>
+    
+      <h1><a href="#" id="miscellaneous-link"
+         data-target="miscellaneous-list">Miscellaneous</h1>
+      <div id="miscellaneous-list">
+      <ul class="posts">
+        
+          
+            
+              <li><a href="/Notebook/random/BokehPlots/">Bokeh Plots</a></li>
+            
+          
+            
+              <li><a href="/Notebook/random/NGC6397/">NGC6397</a></li>
+            
+          
+            
+              <li><a href="/Notebook/random/Pyraf/">Pyraf/IRAF</a></li>
+            
+          
+            
+              <li><a href="/Notebook/random/Setup/">Computer Setup</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+      </ul>
+      </div>
+    
+  
+</div>
+<script type="text/javascript">
+
+var data = {
+1562673600: 4,
+1562760000: 4,
+1562846400: 4,
+1562932800: 4,
+1563192000: 4,
+1563278400: 4,
+1563364800: 4,
+1563883200: 4,
+1563969600: 4,
+1564142400: 4,
+1564401600: 4,
+1566302400: 4,
+1566388800: 4,
+1568376000: 4,
+1568635200: 4,
+1568721600: 4,
+1569931200: 4,
+1572523200: 4,
+1578657600: 4,
+1576152000: 4,
+1576238400: 4,
+1577707200: 4,
+};
+
+var responsiveCal = function( options ) {
+	var now = new Date();
+    if ( $(window).width() < 730 ) {
+        options.start = now.setMonth(now.getMonth());
+        options.range = 1;
+        options.cellSize = 20;
+    } else if( $(window).width() < 1400 ) {
+        options.start = now.setMonth(now.getMonth() - 1);
+        options.range = 2;
+        options.cellSize = 23;
+    } else {
+        options.start = now.setMonth(now.getMonth() - 2);
+        options.range = 3;
+        options.cellSize = 23;
+    }
+
+    if( typeof cal === "object" ) {
+        $('#cal-heatmap').html('');
+        cal = cal.destroy();
+    }
+    cal = new CalHeatMap();
+    cal.init( options );
+
+}
+caloptions = {
+    itemSelector: "#cal-heatmap",
+	domain: "month",
+	subDomain: "x_day",
+	data: data,
+	dataType: "json",
+	cellPadding: 5,
+	domainGutter: 20,
+	displayLegend: false,
+	range: 4,
+  highlight: "now",
+	considerMissingDataAsZero:false,
+	domainDynamicDimension: true,
+	previousSelector: "#cal-heatmap-PreviousDomain-selector",
+	nextSelector: "#cal-heatmap-NextDomain-selector",
+  weekStartOnMonday:false,
+	domainLabelFormat: function(date) {
+		moment.locale("en");
+		return moment(date).format("MMMM").toUpperCase();
+	},
+  onClick: function(date, nb) {
+    year = date.getFullYear();
+    month = ("0"+(date.getMonth()+1)).slice(-2);
+    day = ("0" + date.getDate()).slice(-2);
+    if (nb > 0){
+      window.location.href = "/Notebook/log/" + year + "_" + month + "/#" + year + month + day;
+    }
+	},
+  legendColors: {
+		min: "lightgrey",
+		max: "#2a7ae2",
+		empty: "lightgrey"
+	},
+	subDomainTextFormat: "%d",
+	legend: [0,1,2,3,4,5],
+	label: {
+		position: "top"
+	}
+};
+
+
+// run first time, put in load if your scripts are in footer
+responsiveCal( caloptions );
+
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+});
+
+//resize on resizeEnd function
+$(window).bind('resizeEnd', function() {
+	 responsiveCal( cal.options );
+});
+</script>
+
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Manuel Pichardo M
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/manuelmarcano22"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">manuelmarcano22</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Built on 2020-01-10 18:48:01 CST</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- mathjax -->
+  <!--  <script src="/Notebook/assets/mathjax.js"></script>-->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- change script pointing to jekyll-search.js -->
+  <script src="/Notebook/assets/simple-jekyll-search.min.js"></script>
+
+  <script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/Notebook/search.json',
+	    searchResultTemplate: '<li><a href="/Notebook{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 100,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+</footer>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

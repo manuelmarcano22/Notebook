@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Log |
+    Bokeh Plots
+    
+  </title>
+  <meta name="description" content="Online notebook for my research at TTU">
+
+  <link rel="stylesheet" href="/Notebook/assets/main.css">
+  <link rel="canonical" href="/Notebook/random/BokehPlots/">
+  <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" href="/Notebook/">Lab Notebook</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+        
+        
+          <a class="page-link" href="/Notebook/projects">Projects</a>
+        
+        <input type="text" id="search-input" placeholder="search...">
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <ul id="results-container"></ul>
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Bokeh Plots</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="bokeh">Bokeh</h2>
+
+<p>One idea is that instead of having to take screenshots of the iraf spectra, I can use a plotting library like <a href="http://bokeh.pydata.org/en/latest/">Bokeh</a> to display interactive plots in here. Bokeh can be installed with conda. One way of getting the plot is:</p>
+
+<ul>
+  <li>Create a javascript file and put in in the <strong>/Notebook/pathtopost/assets</strong> folder</li>
+  <li>Then in here call the script. For example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script
+    </span><span class="na">src=</span><span class="s">"/Notebook/images/bokehgraphs/bokeh1.js"</span>
+    <span class="na">id=</span><span class="s">"deab7ab7-b894-4eb4-81be-488c6d136d17"</span>
+    <span class="na">data-bokeh-model-id=</span><span class="s">"5dcc4051-f29b-439a-8c65-43090c7bab7c"</span>
+    <span class="na">data-bokeh-doc-id=</span><span class="s">"d572a467-6563-4a98-859c-4e5242fa207f"</span>
+<span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>The minimal python script is:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">bokeh.resources</span> <span class="kn">import</span> <span class="n">CDN</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
+<span class="kn">from</span> <span class="nn">bokeh.embed</span> <span class="kn">import</span> <span class="n">autoload_static</span>
+
+<span class="n">name</span><span class="o">=</span> <span class="s">'bokeh1.js'</span>
+
+<span class="c1">#Plot commands
+</span><span class="n">plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">()</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">circle</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1">#Js is a js file that provides data for the plot and the tag is the tag to include in the html document.
+</span><span class="n">js</span><span class="p">,</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">autoload_static</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">CDN</span><span class="p">,</span> <span class="s">"/Notebook/images/bokehgraphs/"</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">".js"</span><span class="p">)</span>
+
+<span class="c1">##To save it in files
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s">'.js'</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsfile</span><span class="p">:</span>
+	<span class="n">jsfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">js</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s">'.html'</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">htmlfile</span><span class="p">:</span>
+	<span class="n">htmlfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For the jupyter notebooks and to include them in the Jekyll notebook:</p>
+
+<p><code class="highlighter-rouge">js, tag = autoload_static(p, CDN, "/Notebook/css/cx25.js")</code></p>
+
+<p>Then download the .js file. To get the links</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span><span class="p">,</span> <span class="n">FileLinks</span>
+<span class="n">FileLinks</span><span class="p">(</span><span class="s">'.'</span><span class="p">)</span> <span class="c1">#lists all downloadable files on server
+</span></code></pre></div></div>
+
+<p>Example Bokeh Plot</p>
+
+<script src="/Notebook/random/assets/bokeh1.js" id="45145e88-9174-40ef-b648-1152dc264898"></script>
+
+<h3 id="bokeh-and-docker">Bokeh and Docker</h3>
+
+<p>In the docker container can create an html as output and if the docker container was created exposing a port with the <code class="highlighter-rouge">-p 8888:8888</code> for example can create a simple HTTP server with python (<code class="highlighter-rouge">python -m SimpleHTTPServer 8888</code>)and preview the Bokeh plot in localhost at the specified port.</p>
+
+<p>To plot the spectra from the header information this page was very useful:</p>
+
+<ul>
+  <li><a href="http://stsdas.stsci.edu/cgi-bin/gethelp.cgi?specwcs">The IRAF/NOAO Spectral World Coordinate Systems</a></li>
+</ul>
+
+<blockquote>
+  <p>The FITS image header keywords describing the spectral world coordinates are CTYPEi, CRPIXi, CRVALi, and CDi_j where i and j are axis numbers. As with the physical coordinate transformation the nondiagonal or rotation terms are not expected in the spectral WCS and may cause problems if they are not zero. The CTYPEi keywords will have the value LINEAR to identify the type of of coordinate system. The transformation between dispersion coordinate, wi, and logical pixel coordinate, li, along axis i is given by  wi = CRVALi + CDi_i * (li - CRPIXi)</p>
+</blockquote>
+
+<p>Regarding the defaults</p>
+
+<blockquote>
+  <p>If the keywords are missing then the values are assumed to be zero except for the diagonal elements of the scale/rotation matrix, the CDi_i, which are assumed to be 1. If only some of the keywords are present then any missing CDi_i keywords will take the value 0 which will cause IRAF tasks to fail with arithmetic or matrix inversion errors. If the CTYPEi keyword is missing it is assumed to be “LINEAR”.</p>
+</blockquote>
+
+<h3 id="boxcar-smooth">Boxcar Smooth</h3>
+
+<p>IRAF very useful smooth function applies a boxcar smooth. A nice short reference is in <a href="http://joseph-long.com/writing/AstroPy-boxcar/">here</a>. This is using the astropy functions:</p>
+
+<p><code class="highlighter-rouge">from astropy.convolution import convolve, Box1DKernel</code></p>
+
+<p>Following the example <a href="https://demo.bokehplots.com/apps/sliders">here</a> and <a href="https://github.com/bokeh/bokeh/blob/master/examples/app/sliders.py">here</a> I can try to have it in bokeh. The only ploblem is that to generate the static html and js the widget I think needs to be written in JS and you have to pass a ColumnDataSource. One easy, but not efficient way is to create several Data sets. It does the work but could be more efficient. Also to get back to the unsmooth one needs to refresh the whole page.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">source3</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysmooth3</span><span class="p">))</span>
+<span class="n">source5</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysmooth5</span><span class="p">))</span>
+
+<span class="n">plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_label</span><span class="o">=</span><span class="s">'Angstrom'</span><span class="p">,</span> <span class="n">y_axis_label</span><span class="o">=</span><span class="s">'Y'</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">ResizeTool</span><span class="p">())</span>
+<span class="c1">#Eraaseplot.line(xlist,secondstar)
+</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s">'x'</span><span class="p">,</span><span class="s">'y'</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+
+<span class="c1">##Callback in JS
+</span><span class="n">callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span><span class="n">source3</span><span class="o">=</span><span class="n">source3</span><span class="p">,</span><span class="n">source5</span><span class="o">=</span><span class="n">source5</span><span class="p">),</span> <span class="n">code</span><span class="o">=</span><span class="s">"""
+        var data = source.data;
+        var data3 = source3.data;
+        var data5 = source5.data;
+        var f = cb_obj.value
+        y = data['y']
+        y3 = data3['y']
+        y5 = data5['y']
+        
+        if (f == 3.0){
+        for (i = 0; i &lt; y.length; i++) {
+            y[i] = y3[i]
+        }
+        }
+        
+        if (f == 5.0){
+        for (i = 0; i &lt; y.length; i++) {
+            y[i] = y5[i]
+        }
+        }
+        source.trigger('change');
+    """</span><span class="p">)</span>
+
+
+<span class="c1"># Set up slider
+</span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Smooth Curve"</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span><span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">)</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">slider</span><span class="p">,</span> <span class="n">plot</span><span class="p">)</span>
+<span class="n">output_file</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s">'try.html'</span><span class="p">)</span></code></pre></figure>
+
+<h1 id="javascript">Javascript</h1>
+
+<p>For javascript there are some interesting libraries like <a href="http://js9.si.edu/">JS9</a> to display astronomical image in your browser and <a href="http://www.numericjs.com/">Numeric Javascript</a> for</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Manuel Pichardo M
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/manuelmarcano22"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">manuelmarcano22</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Built on 2020-01-10 18:48:01 CST</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- mathjax -->
+  <!--  <script src="/Notebook/assets/mathjax.js"></script>-->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- change script pointing to jekyll-search.js -->
+  <script src="/Notebook/assets/simple-jekyll-search.min.js"></script>
+
+  <script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/Notebook/search.json',
+	    searchResultTemplate: '<li><a href="/Notebook{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 100,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+</footer>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

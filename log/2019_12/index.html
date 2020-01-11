@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Log |
+    December 2019
+    
+  </title>
+  <meta name="description" content="2019.12.12">
+
+  <link rel="stylesheet" href="/Notebook/assets/main.css">
+  <link rel="canonical" href="/Notebook/log/2019_12/">
+  <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" href="/Notebook/">Lab Notebook</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+        
+        
+          <a class="page-link" href="/Notebook/projects">Projects</a>
+        
+        <input type="text" id="search-input" placeholder="search...">
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <ul id="results-container"></ul>
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">December 2019</h1>
+    <p class="post-meta">
+  </header>
+
+  
+  <div class="postNav cf">
+    
+    
+        <a class="prev" href="/Notebook/log/2019_10/#bottomNav"><span>&laquo;&nbsp;October 2019</span></a>
+    
+  </div>
+  
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 class="log-entry" id="20191212">Thu, Dec 12</h3>
+
+<p>Today I redid the first 20 images on DOLPHOT but only for chip 3. I have to check the output and if it worked then do it for all of chip 3.</p>
+
+<p>Also worked a bit on TESS data. Simone showed me how he extract his lightcurve. He has a gui to select the star and the background then substract, maybe the mean he said. I can do it manually with lightcurve:</p>
+
+<p>Here is a small sample for KL Dra: <a href="https://github.com/manuelmarcano22/TESSOutburst/blob/master/KL%20Dra.ipynb">KL Dra</a>. There seem to be two outburst in sector 14, and maybe 3 in 17. Simone also saw it. There are more ways to detrend the TESS data and maybe I should look into that.</p>
+
+<p>Also today the NICER team published the first results on <a href="https://iopscience.iop.org/journal/2041-8205/page/Focus_on_NICER_Constraints_on_the_Dense_Matter_Equation_of_State">J0030+0451</a>. 7 long papers reporting their cool findings. One was that the magnetic field of the pulsar might not be as nice as thought. The two hot spots are in the same hemisphere in not a nice round shape. They propose two models. The amsterdam group and a group in maryland. Very cool</p>
+
+<h3 class="log-entry" id="20191213">Fri, Dec 13</h3>
+
+<p>Today changed some parameters of the DOLPHOT because the run from yesterday still finds a lot of stars where there are none and can’t find the bright ones. Also tried to play with the lightkurve code to modify the BOkeh. At the end will just save the lightcurve generated to do the background and substraction. Will probably have a notebook on the modifications I did. Theonly way to read the index that I could found was to get it from a javascript window alert that is annoying if you have to select many.</p>
+
+<p>Also yesterday I was thinking on this paper and what it means if we get the HST data and maybe for ESO studenship project? <a href="https://arxiv.org/abs/1912.01531">Disentangling CV in Gaia’s HR-Diagram</a>.</p>
+
+<p>There was today a very cool article on microlensing events on omega cen to see the balck holes <a href="https://arxiv.org/abs/1912.05701"> Constraining Black Hole Populations in Globular Clusters using Microlensing: Application to Omega Centauri </a>. They did a MC simulation.</p>
+
+<p>Also Anna told me that she uses python photoutils and it can be very fast. So I should give it a try to <a href="https://photutils.readthedocs.io/en/stable/">phoutils</a>.</p>
+
+<p>For the TESS KL Dra seems to be the one gaia source in the middle but it doesnt agree with the gaia ID from a paper on AM CVns in the gaia era. But the outburst are seen if I only get the lightcurve from that single point in the middle.</p>
+
+<h1 id="201912126">2019.12.126</h1>
+
+<p>I finally ran Dolphot with the non-drizzled image as the reference one but just one of the other exposures. This way ther is a lot of false detection by DOLPHOT, just by looking at the region file but all the very bright ones are there. This was not the case before. The first thing I did was to see if I can recover the data for U18. This run only 117 had a good astrometric flag, but still the peak at the same period as before was there and the same star.</p>
+
+<h3 class="log-entry" id="20191230">Mon, Dec 30</h3>
+
+<p>I finished the U23 notebook. Now in the same notebook I can plot the CMD and the hst  images. Can’t really plot the huge region file of all the dolphot sources, but it is ok. Now it is super fast to find the close stars with the astropy functions. Using the phase dispersion minimization it is fairly esy to find the period by Kaluzny on U23. And also twice that one, but the period is very long so probably the shortest. There are like 125 good points in the light-curve. Now has to do for the rest of the CVs and plot them in BOkeh.</p>
+
+  </div>
+
+  
+  <div class="postNav cf" id="bottomNav">
+    
+    
+        <a class="prev" href="/Notebook/log/2019_10/#bottomNav"><span>&laquo;&nbsp;October 2019</span></a>
+    
+  </div>
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Manuel Pichardo M
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/manuelmarcano22"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">manuelmarcano22</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Built on 2020-01-10 18:48:01 CST</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- mathjax -->
+  <!--  <script src="/Notebook/assets/mathjax.js"></script>-->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- change script pointing to jekyll-search.js -->
+  <script src="/Notebook/assets/simple-jekyll-search.min.js"></script>
+
+  <script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/Notebook/search.json',
+	    searchResultTemplate: '<li><a href="/Notebook{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 100,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+</footer>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

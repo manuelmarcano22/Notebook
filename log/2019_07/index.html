@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Log |
+    July 2019
+    
+  </title>
+  <meta name="description" content="2019.07.09 #To-do">
+
+  <link rel="stylesheet" href="/Notebook/assets/main.css">
+  <link rel="canonical" href="/Notebook/log/2019_07/">
+  <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" href="/Notebook/">Lab Notebook</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+        
+        
+          <a class="page-link" href="/Notebook/projects">Projects</a>
+        
+        <input type="text" id="search-input" placeholder="search...">
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <ul id="results-container"></ul>
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">July 2019</h1>
+    <p class="post-meta">
+  </header>
+
+  
+  <div class="postNav cf">
+    
+      <a class="next" href="/Notebook/log/2019_08/"><span>August 2019&nbsp;&raquo;</span></a>
+    
+    
+  </div>
+  
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 class="log-entry" id="20190709">Tue, Jul  9</h3>
+
+<p>Today I tried to run Pampelmuse on the cluster 47 Tuc. For this I had to first correct the astrometry of the MUSE datacube. The Hugss hubble images in <a href="https://archive.stsci.edu/prepds/hugs/">here</a> are corrected so I just used <a href="https://mpdaf.readthedocs.io/en/latest/">mpdaf</a> to match both images and worked nicely. Unfortunately, it didn’t work. For all the stars it could calculate the ‘moments’. I am not sure what this error messages exactly means but could debugg it and could run INITFIT on this datacube.</p>
+
+<h2 id="to-do">To-do</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MUSE and Hugss Hubble shorts scripts under Misc.</li>
+</ul>
+
+<h3 class="log-entry" id="20190710">Wed, Jul 10</h3>
+
+<p>I have been reading about how to get distances from Gaia parallax. There are some very interesting papers by Bailer-Jones et al 2018 <a href="https://arxiv.org/pdf/1804.10121.pdf">here</a> and Bailer-Jones 2015 <a href="https://arxiv.org/pdf/1507.02105.pdf">Estimating distances from parallaxes</a></p>
+
+<p>Also there are two particulary interesting GitHub repository to code to do this. One for the paper <a href="https://arxiv.org/pdf/1805.03298.pdf">On the Gaia DR2 distances for Galactic Luminous Blue Variables</a> Nathan Smith et al. 2012. <a href="https://github.com/curiousmiah/Gaia_Distances">Gaia_distances</a> and also a <a href="https://github.com/ehalley/parallax-tutorial-2018">tutorial in R</a>. Bailer-Jones has a book on practical Bayesian Inference that maybe I should check.</p>
+
+<p>Dr. Maccarone has a paper as co-author (Gandhi et al 2018) called <a href="https://arxiv.org/abs/1804.11349">Gaia DR2 distances and peculiar Velocities for Galactic Black Hole Transients</a>. They do something similar to calculate the distances from the parallaxes. They needed to calculate the length scale for the X-ray sources and also used other prior.</p>
+
+<h3 class="log-entry" id="20190711">Thu, Jul 11</h3>
+
+<p>##DOLPHOT on WFPC2</p>
+
+<p>Taken on 2005 with proposal id 10424</p>
+
+<p>Downloaded the NGC 6752 since Cohn has a paper with X-ray and maybe we can see them with MUSE.</p>
+
+<h2 id="to-do-1">To-do</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Fix Astrometry NGC6752.</li>
+</ul>
+
+<h3 class="log-entry" id="20190712">Fri, Jul 12</h3>
+
+<p>MUSE porposal for sure</p>
+
+<h2 id="to-do-2">To-do</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Write about M22 star and telescopes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Fit Halpha to all CVs.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Cross correlate the catalog from Piotto to the catalog of Anderson. This is under CMDM22 and NGC6397</li>
+</ul>
+
+<p>Calculate Halpha - R for Cvs and 10% less that that how much to see if visiblae.</p>
+
+<p>High density lines for stellar classification</p>
+
+<h3 class="log-entry" id="20190715">Mon, Jul 15</h3>
+
+<p>On the Github repo called ReducedMUSE2017 under the misc folder and CognCatalog in the notebook called TableCohn.ipynb I did the Halpha-R from the Cohn data. Can see it <a href="https://nbviewer.jupyter.org/github/manuelmarcano22/ReduceMUSE2017/blob/master/misc/CohnCatalog/TableCohn.ipynb">here</a></p>
+
+<p>Talked to Anna and need to play with te sky and other parameters. After playing with them if still needed, I can contact Sebastian. I have his old data so I know how it should look like the stars. I need to learn how to classify automatiocally the stars.</p>
+
+<h2 id="to-do-3">To-do</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Rerun Pampelmuse with less stars and play with the parameters.</li>
+</ul>
+
+<h3 class="log-entry" id="20190716">Tue, Jul 16</h3>
+
+<p>Started to read documentation regarding the software DOLPHOT to do photometry with Hubble. The data from NGC6397 in the filter F336W is with the WFPC2. Some useful information is here:</p>
+
+<p>1-<a href="http://www.stsci.edu/files/live/sites/www/files/home/hst/instrumentation/legacy/wfpc2/_documents/wfpc2_dhb.pdf">What hubble wfpc2 suffixes mean</a></p>
+
+<p>##To-do</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Do regions from italians paper. How to do it <a href="https://github.com/manuelmarcano22/ReduceMUSE2017/tree/master/misc/PallancaCatalog">here</a></li>
+</ul>
+
+<h3 class="log-entry" id="20190717">Wed, Jul 17</h3>
+
+<p>The repository for the DOLPHOT project with NGC6397 and the F336W filter is <a href="https://github.com/manuelmarcano22/NGC6397F336W">here</a>. It has the code to create the param file for dolhpot and the presteps required. Also here is an exposure as a fuction of tiome and can be see <a href="https://nbviewer.jupyter.org/github/manuelmarcano22/NGC6397F336W/blob/master/u9712005/ExposurevsDate.ipynb">here</a>.</p>
+
+<p>One very useful resource was this called <a href="https://github.com/jonathansick/delphinus">delphinus</a>. I used his code to create the param file. I will check how he reads the data from the dolphot output.</p>
+
+<p>A useful resource <a href="https://paolobonfini.wordpress.com/2012/03/28/notes-dolphot-parameters/">here</a></p>
+
+<h2 id="misc">Misc</h2>
+
+<p>This guy has a repo to work woth padova code https://github.com/jonathansick?tab=repositories</p>
+
+<p>To work with apogee data maybe:</p>
+
+<p><a href="https://github.com/jobovy/apogee">apogee</a></p>
+
+<h3 class="log-entry" id="20190723">Tue, Jul 23</h3>
+
+<p>Proposal look M30</p>
+
+<p>maybe focus on CVS and learn how to do the active binaries. AB</p>
+
+<h3 class="log-entry" id="20190724">Wed, Jul 24</h3>
+
+<p><a href="https://nbviewer.jupyter.org/github/manuelmarcano22/NGC6397F336W/blob/master/u9712005/OutputreadU18.ipynb">U18 light Curve</a></p>
+
+<p>And many more now</p>
+
+<h3 class="log-entry" id="20190726">Fri, Jul 26</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />in each lightcurve put the UV CMD, screenshot region with ruler and known things like spectra</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />curvabse</li>
+</ul>
+
+<h3 class="log-entry" id="20190729">Mon, Jul 29</h3>
+
+<p>To find the 6 minute double white dwarf they use the algorithm conditional entropy and the implemantaion iindlucded in the pycuda based cuvarbase. paper is Burdge et al 2019 and the code is devolped by John Hoffman</p>
+
+  </div>
+
+  
+  <div class="postNav cf" id="bottomNav">
+    
+      <a class="next" href="/Notebook/log/2019_08/"><span>August 2019&nbsp;&raquo;</span></a>
+    
+    
+  </div>
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Manuel Pichardo M
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/manuelmarcano22"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">manuelmarcano22</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Built on 2020-01-10 18:48:01 CST</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- mathjax -->
+  <!--  <script src="/Notebook/assets/mathjax.js"></script>-->
+  <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- change script pointing to jekyll-search.js -->
+  <script src="/Notebook/assets/simple-jekyll-search.min.js"></script>
+
+  <script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/Notebook/search.json',
+	    searchResultTemplate: '<li><a href="/Notebook{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 100,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+</footer>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
