@@ -28,7 +28,7 @@ jekyll-lab-notebook:
       name: Miscellaneous
       dir: 'random/'
       hidden: true
-
+ 
 
 # live reload options
 livereload: true
