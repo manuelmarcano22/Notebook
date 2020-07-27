@@ -25,6 +25,10 @@ jekyll-lab-notebook:
       is_posts: true
       hidden: false
     -
+      name: Reading
+      dir: 'reads/'
+      hidden: false
+    -
       name: Miscellaneous
       dir: 'random/'
       hidden: true
