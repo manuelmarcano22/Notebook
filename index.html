@@ -114,6 +114,14 @@
               
             
               
+              button = document.getElementById("reading-link")
+              button.onclick = f;
+              target = document.getElementById(button.dataset.target)
+              
+                target.style.display = 'block'
+              
+            
+              
               button = document.getElementById("miscellaneous-link")
               button.onclick = f;
               target = document.getElementById(button.dataset.target)
@@ -163,6 +171,40 @@
       </ul>
       </div>
     
+      <h1><a href="#" id="reading-link"
+         data-target="reading-list">Reading</h1>
+      <div id="reading-list">
+      <ul class="posts">
+        
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/Notebook/reads/Reading/">Reading List</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+      </ul>
+      </div>
+    
       <h1><a href="#" id="miscellaneous-link"
          data-target="miscellaneous-list">Miscellaneous</h1>
       <div id="miscellaneous-list">
@@ -179,6 +221,8 @@
           
             
               <li><a href="/Notebook/random/Pyraf/">Pyraf/IRAF</a></li>
+            
+          
             
           
             
@@ -224,7 +268,7 @@ var data = {
 1568721600: 4,
 1569931200: 4,
 1572523200: 4,
-1586260800: 4,
+1595851200: 4,
 1576152000: 4,
 1576238400: 4,
 1577707200: 4,
@@ -234,7 +278,7 @@ var data = {
 1579089600: 4,
 1579262400: 4,
 1580472000: 4,
-1586260800: 4,
+1595851200: 4,
 1580817600: 4,
 1580990400: 4,
 1586174400: 4,
@@ -356,7 +400,7 @@ $(window).bind('resizeEnd', function() {
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>Built on 2020-04-07 01:42:13 CDT</p>
+        <p>Built on 2020-07-27 10:02:45 CDT</p>
       </div>
     </div>
 
