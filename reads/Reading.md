@@ -60,6 +60,25 @@ Longest period nova at 3.4118 days for Nova Per 2018 (=V392 Per).
 
 
 
+## Thursday July 30 2020
+
+[Soft X-ray emission lines in the X-ray binarySwift J1858.6–0814 observed withXMM-Newton-RGS:disc atmosphere or wind?](https://arxiv.org/pdf/2007.14407.pdf). 
+
+Swift J1858.6-0814 had optical P Cygni profile and now XMM P-cygni in Xray so wind or atmosphere. 
+
+## Thursday August 2020
+
+[The April–June 2020 super-outburst of OJ 287 and its long-termmulti-wavelength lightcurve with Swift: binary supermassive blackhole and jet activity](https://arxiv.org/pdf/2008.01826.pdf) by Komossa et. al.
+
+It talks about OJ 287, small blazar at z=0.306 with data from 1891 that shows "it shows pronounced optical double-peaksevery 12 years"
+
+>> We find that the outburst is jet-driven and consistent with abinary SMBH model, where the disk impact of the secondary blackhole triggers an after-flare in form of time-delayed accretion activityon the primary which is then followed by an increase in jet emissionof the primary∼4 months later.
 
 
 
+## Friday Aug 07 2020
+
+[A quantitative explanation of the type-B QPOs in GX 339–4](https://arxiv.org/pdf/2008.02557.pdf).
+
+
+In conclusion, we are able to quantitatively explain the periodicvariation of the photon index as coming from a precessing jet
