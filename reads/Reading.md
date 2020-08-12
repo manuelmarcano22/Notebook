@@ -82,3 +82,23 @@ It talks about OJ 287, small blazar at z=0.306 with data from 1891 that shows "i
 
 
 In conclusion, we are able to quantitatively explain the periodicvariation of the photon index as coming from a precessing jet
+
+
+## Monday  August 2020
+
+
+[Teaching with Code: Globular Cluster Distance Lab](https://arxiv.org/pdf/2008.03121.pdf)
+
+
+## Tuesday Aug 11 2020
+
+[Testing Comptonization as the origin of the continuum in nonmagnetic Cataclysmic Variables. The photon index of X-ray emission](https://arxiv.org/abs/2008.03849)
+
+
+
+[Multi-Wavelength Constraints on the Outflow Properties of the Extremely BrightMillisecond Radio Bursts from the Galactic Magnetar SGR 1935+2154](https://arxiv.org/pdf/2008.03634.pdf)
+
+
+
+[Discovery of state transition behaviors in PSR J1124--5916](https://arxiv.org/abs/2008.03671)
+
