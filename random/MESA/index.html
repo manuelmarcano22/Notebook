@@ -8,13 +8,13 @@
 
   <title>
     Log |
-    April 2020
+    MESA
     
   </title>
-  <meta name="description" content="2020.04.06 #To-do">
+  <meta name="description" content="Online notebook for my research at TTU">
 
   <link rel="stylesheet" href="/Notebook/assets/main.css">
-  <link rel="canonical" href="/Notebook/log/2020_04/">
+  <link rel="canonical" href="/Notebook/random/MESA/">
   <link rel="alternate" type="application/rss+xml" title="Lab Notebook" href="/Notebook/feed.xml">
   <!-- Mathjax Support -->
   <script type="text/javascript" async
@@ -49,42 +49,35 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">April 2020</h1>
-    <p class="post-meta">
+    <h1 class="post-title">MESA</h1>
   </header>
 
-  
-  <div class="postNav cf">
-    
-    
-        <a class="prev" href="/Notebook/log/2020_02/#bottomNav"><span>&laquo;&nbsp;February 2020</span></a>
-    
+  <div class="post-content">
+    <h2 id="mesa">MESA</h2>
+
+<h3 id="mesa-docker">MESA Docker</h3>
+
+<h4 id="setup">Setup</h4>
+
+<p>I found this repository <a href="https://github.com/evbauer/MESA-Docker">MESA-Docker</a>. The last time I tried to installed it (August 2020), I had some issues with permissions and X server inside the container.</p>
+
+<p>I had to run it a sudo and then enter as root the container. I added the line:</p>
+
+<p><code class="highlighter-rouge">--user "$(id -u):$(id -g)" \</code></p>
+
+<p>and also <code class="highlighter-rouge">--privileged</code></p>
+
+<p>Then as a root I changed the ownership that all belows to the user docker and that the user docker or group is part of sudo. Then all works</p>
+
+<h5 id="for-the-x-server">For the X-server</h5>
+
+<p>I had to do <code class="highlighter-rouge">xhost +x</code>  before the <code class="highlighter-rouge">sudo ./linux_dockerMESA.sh</code> in my machine.</p>
+
   </div>
-  
 
-  <div class="post-content" itemprop="articleBody">
-    <h3 class="log-entry" id="20200406">Mon, Apr  6</h3>
-
-<p>There is Gemini AO infrared data for GCs. Should we look for R Corona  Borealis? Can we?</p>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Download ACS data from M95</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Get $T_eff$ of U18 if they have it in this paper <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...635A.161J/abstract">NGC 6397: The metallicity trend along the isochrone revisited</a></li>
-</ul>
-
-  </div>
-
-  
-  <div class="postNav cf" id="bottomNav">
-    
-    
-        <a class="prev" href="/Notebook/log/2020_02/#bottomNav"><span>&laquo;&nbsp;February 2020</span></a>
-    
-  </div>
-  
 </article>
 
       </div>
